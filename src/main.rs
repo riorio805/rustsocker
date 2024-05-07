@@ -68,7 +68,6 @@ async fn handle_connection(
                         println!("JSON: {parsed:#?}");
                         match parsed.message_type.clone().as_str() {
                         "register" => {
-                            println!("Enter register");
                             user = Some(User {
                                 nick: parsed.data.unwrap(),
                                 is_alive: true,
