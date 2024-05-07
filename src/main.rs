@@ -61,7 +61,7 @@ async fn handle_connection(
                 match incoming {
                 Some(Ok(msg)) => {
                     if let Ok(text) = msg.to_text() {
-                        println!("From client {addr:?}:");
+                        println!("From client {addr:?}: {text}");
                         let parsed =
                             serde_json::from_str::<ChatMessage>(text)
                             .expect("Can't parse to JSON");
